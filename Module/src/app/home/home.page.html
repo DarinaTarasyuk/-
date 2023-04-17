@@ -1,0 +1,89 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Модульна контрольна робота №1
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Варіант 10</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Завдання </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>Побудувати ієрархію класів, яка буду включати інтерфейси та написати крос-платформну програму для вирішення наступної
+         задачі(використовувати фреймворк Ionic). Ієрархію класів побудувати з використанням принципу High Cohesion + Low Coupling та SOLID.  
+      </p>
+      <p>Середньовічний король вирішив оголосити війну сусідній державі для чого необхідно сформувати своє військо 
+        та розрахувати вартість його утримання та швидкість пересування. Після обліку наявних військових одиниць виявилось,
+        що у військо можна записати некромантів у легкій броні (вартість утримання 5 золотих на добу + одне мертве тіло(можна 
+        і живе, але тоді необхідно врахувати додаткові витрати, а саме зарплатню кату 1 золотий) швидкість 15 км/ч), ополчення у
+        легкій броні(вартість утримання 0, швидкість 5 км/ч можна передавати в якості тіл некромантам і корму варгів) і орки 
+        (вартість утримання 3 золотих + корм для варгів, які полюбляють людське м‘ясо, швидкість 13 км/ч). Необхідно сформувати
+        військо з як мінімум 3 родів військ і розрахувати вартість утримання та швидкість. Результати такого планування необхідно 
+        виводити на екран.  
+     </p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Інформація про некромантів у легкій броні</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-label position="stacked">Введіть кількість некромантів:</ion-label>
+      <ion-input type="number" id="necromancer_n" placeholder="10" [(ngModel)]="Input_nn"></ion-input> 
+      <ion-label position="stacked">Введіть кількість мертвих тіл:</ion-label>
+      <ion-input type="number" id="deadbody_n" placeholder="50" [(ngModel)]="Input_dbn"></ion-input>
+    </ion-card-content>
+  </ion-card>
+   
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Інформація про ополчення у легкій броні:</ion-card-title>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <ion-label position="stacked">Введіть кількість ополчення:</ion-label>
+      <ion-input type="number" id="militia_n" placeholder="100" [(ngModel)] = "Input_mn"></ion-input> 
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Інформація про орків:</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+    <ion-label position="stacked">Введіть кількість орків:</ion-label>
+    <ion-input type="number" id="orcs_n" placeholder="20" [(ngModel)]="Input_on"></ion-input> 
+    <ion-label position="stacked">Введіть кількість варгів:</ion-label>
+    <ion-input type="number" id="wargs_n" placeholder="10" [(ngModel)]="Input_wn"></ion-input> 
+    <ion-label position="stacked">Введіть кількість людського м'яса у кг:</ion-label>
+    <ion-input type="number" id="humanmeet_n" placeholder="50" [(ngModel)]="Input_hmn"></ion-input> 
+    <div>
+      <ion-button (click)="info_military(Input_nn,Input_dbn,Input_mn,Input_on,Input_wn,Input_hmn)">
+        Отримати інформацію </ion-button>       
+    </div>
+  </ion-card-content>
+  </ion-card>
+  
+  <ion-card>
+     <ion-card-content>
+    <ion-label>Вартість утримання:</ion-label>
+    <ion-item> {{show_cost}} </ion-item> 
+    <ion-label>Швидкість війська:</ion-label>
+    <ion-item> {{show_speed}} </ion-item> 
+    </ion-card-content>
+  </ion-card>  
+</ion-content>
+
